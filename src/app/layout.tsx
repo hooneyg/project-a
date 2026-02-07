@@ -16,9 +16,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Park Seon-Young | AI Development Partner",
   description: "Your reliable AI partner for solopreneurs. Automated project management and development.",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({

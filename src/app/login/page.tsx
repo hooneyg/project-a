@@ -56,7 +56,7 @@ export default function LoginPage() {
                         <UserAuthForm mode="login" />
                         <p className="px-8 text-center text-sm text-muted-foreground">
                             <Link
-                                href="/register"
+                                href="/signup"
                                 className="hover:text-brand underline underline-offset-4"
                             >
                                 계정이 없으신가요? 회원가입

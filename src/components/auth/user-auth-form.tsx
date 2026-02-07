@@ -23,6 +23,17 @@ export function UserAuthForm({ className, mode, ...props }: UserAuthFormProps) {
 
         const formData = new FormData(event.target as HTMLFormElement)
 
+        if (mode === "signup") {
+            const password = formData.get("password") as string
+            const confirmPassword = formData.get("confirmPassword") as string
+
+            if (password !== confirmPassword) {
+                alert("비밀번호가 일치하지 않습니다.")
+                setIsLoading(false)
+                return
+            }
+        }
+
         if (mode === "login") {
             await login(formData)
         } else {
@@ -66,6 +77,20 @@ export function UserAuthForm({ className, mode, ...props }: UserAuthFormProps) {
                             required
                         />
                     </div>
+                    {mode === "signup" && (
+                        <div className="grid gap-2">
+                            <Label className="sr-only" htmlFor="confirmPassword">
+                                Confirm Password
+                            </Label>
+                            <PasswordInput
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm Password"
+                                disabled={isLoading}
+                                required
+                            />
+                        </div>
+                    )}
                     <Button disabled={isLoading}>
                         {isLoading && (
                             <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />

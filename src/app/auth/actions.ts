@@ -36,9 +36,14 @@ export async function signup(formData: FormData) {
     const data = {
         email: formData.get('email') as string,
         password: formData.get('password') as string,
+        confirmPassword: formData.get('confirmPassword') as string,
         options: {
             emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback`,
         }
+    }
+
+    if (data.password !== data.confirmPassword) {
+        redirect('/signup?error=Passwords do not match')
     }
 
     const { error } = await supabase.auth.signUp(data)
