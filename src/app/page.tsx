@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle2, Rocket } from "lucide-react";
@@ -13,7 +13,7 @@ export default function Home() {
             <a className="mr-6 flex items-center space-x-2" href="/">
               <Rocket className="h-6 w-6 text-orange-500" />
               <span className="hidden font-bold sm:inline-block">
-                지선영 본부장
+                박선영 본부장
               </span>
             </a>
           </div>
@@ -22,7 +22,9 @@ export default function Home() {
               <a href="#features" className="transition-colors hover:text-foreground/80 text-foreground/60">기능</a>
               <a href="#pricing" className="transition-colors hover:text-foreground/80 text-foreground/60">가격</a>
             </nav>
-            <Button variant="default" size="sm" className="ml-4 bg-orange-500 hover:bg-orange-600">로그인</Button>
+            <Link href="/login">
+              <Button variant="default" size="sm" className="ml-4 bg-orange-500 hover:bg-orange-600">로그인</Button>
+            </Link>
           </div>
         </div>
       </header>
@@ -39,14 +41,16 @@ export default function Home() {
               아니, <span className="text-orange-500">혼자서 더 잘해요.</span>
             </h1>
             <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-              기획부터 개발, 마케팅까지. AI 본부장 지선영이 든든하게 지원합니다.
+              기획부터 개발, 마케팅까지. AI 본부장 박선영이 든든하게 지원합니다.
               <br />
               복잡한 건 저한테 맡기시고, 대표님은 아이디어만 생각하세요.
             </p>
             <div className="space-x-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                지금 무료로 시작하기 <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <Link href="/signup">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+                  지금 무료로 시작하기 <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
               <Button variant="outline" size="lg">
                 데모 보러가기
               </Button>
@@ -58,7 +62,7 @@ export default function Home() {
         <section id="features" className="container mx-auto space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24">
           <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
             <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl font-bold">
-              왜 지선영 본부장일까요?
+              왜 박선영 본부장일까요?
             </h2>
             <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
               돈은 아끼고, 속도는 올리고, 퀄리티는 챙깁니다.
@@ -72,7 +76,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold">AI 자동화</h3>
                 <p className="text-sm text-muted-foreground">
-                  반복 업무는 지선영이 처리합니다. 대표님은 큰 그림만 그리세요.
+                  반복 업무는 박선영이 처리합니다. 대표님은 큰 그림만 그리세요.
                 </p>
               </CardContent>
             </Card>
@@ -105,7 +109,7 @@ export default function Home() {
         <footer className="py-6 md:px-8 md:py-0">
           <div className="container mx-auto flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
             <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-              Built by <span className="font-bold underline underline-offset-4">Ji Seon-Young</span>. © 2026 Project A.
+              Built by <span className="font-bold underline underline-offset-4">Park Seon-Young</span>. © 2026 Project A.
             </p>
           </div>
         </footer>
