@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle2, Rocket } from "lucide-react";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
             <nav className="flex items-center space-x-6 text-sm font-medium">
               <a href="#features" className="transition-colors hover:text-foreground/80 text-foreground/60">기능</a>
               <a href="#pricing" className="transition-colors hover:text-foreground/80 text-foreground/60">가격</a>
+              <ModeToggle />
             </nav>
             <Link href="/login">
               <Button variant="default" size="sm" className="ml-4 bg-orange-500 hover:bg-orange-600">로그인</Button>

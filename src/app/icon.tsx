@@ -17,14 +17,15 @@ export default function Icon() {
             // ImageResponse JSX element
             <div
                 style={{
-                    fontSize: 24,
-                    background: 'transparent',
+                    fontSize: 20,
+                    background: '#f97316', // orange-500
                     width: '100%',
                     height: '100%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: 'white',
+                    borderRadius: '20%', // Soft rounded square
                 }}
             >
                 🚀
